@@ -1,11 +1,13 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  darkMode: "media", // or 'media' or 'class' or false
+  whitelist: ["mode-dark"],
   theme: {
-    extend: {},
+    darkSelector: ".mode-dark",
   },
   variants: {
-    extend: {},
+    backgroundColor: ["hover", "responsive", " focus", "dark", "dark-hover"],
+    textColor: ["hover", "responsive", "focus", "dark", "dark-hover"],
   },
-  plugins: [],
-}
+  plugins: [require("tailwindcss-dark-mode")()],
+};

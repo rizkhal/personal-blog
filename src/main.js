@@ -1,9 +1,8 @@
-import {
-    createApp
-} from 'vue'
+import { createApp } from "vue";
+import App from "@/App.vue";
+import store from "@/hooks/index";
+import "@/index.css";
 
-import App from './App.vue'
-
-import "@/index.css"
-
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(store); // inject store for use globaly
+app.mount("#app");

@@ -1,7 +1,10 @@
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  enabled: process.env.NODE_ENV === "production",
+  content: ["./index.html", "./src/**/*.{vue, js}"],
+  options: {
+    whitelist: ["mode-dark"],
+  },
   darkMode: "media", // or 'media' or 'class' or false
-  whitelist: ["mode-dark"],
   theme: {
     darkSelector: ".mode-dark",
   },

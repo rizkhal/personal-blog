@@ -1,5 +1,5 @@
 <template>
-  <main class="h-min-screen bg-gray-100 dark:bg-gray-900 dark:text-purple-50">
+  <main class="min-h-screen bg-gray-200 dark:bg-gray-900 dark:text-purple-50">
     <div class="container mx-auto flex flex-wrap pb-6">
       <ThemeToggle />
       <Header />

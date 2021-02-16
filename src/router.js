@@ -17,7 +17,7 @@ const routes = [
     meta: { guest: true },
   },
   {
-    path: "/blog/:id",
+    path: "/:id",
     name: "Post",
     component: Post,
     meta: { guest: true },

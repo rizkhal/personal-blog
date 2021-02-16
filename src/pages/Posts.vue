@@ -5,26 +5,24 @@
         <AsyncPostsComponent />
       </template>
       <template #fallback>
-        <Skeleton :count="count" />
+        <div class="absolute top-2/4">Loading...</div>
       </template>
     </Suspense>
   </section>
 </template>
 
 <script>
-import { useStore, computed } from "vuex";
+import { useStore } from "vuex";
 import { defineAsyncComponent } from "vue";
-import Skeleton from "@/components/Skeleton.vue";
 import Pagination from "@/components/Pagination.vue";
 
-const AsyncPostsComponent = defineAsyncComponent({
-  loader: () =>
-    import("../components/Posts.vue" /* webpackChunkName: "posts" */),
-});
+const AsyncPostsComponent = defineAsyncComponent(() =>
+  import("../components/PostLists.vue" /* webpackChunkName: "post-lists" */)
+);
 
 export default {
   name: "Posts",
-  components: { Pagination, AsyncPostsComponent, Skeleton },
+  components: { Pagination, AsyncPostsComponent },
   setup() {
     const store = useStore();
     const { count } = store.getters;

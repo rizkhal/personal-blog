@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --mode-development",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -16,6 +16,7 @@
     "tailwindcss-dark-mode": "^1.1.7",
     "vue": "^3.0.0",
     "vue-router": "^4.0.3",
+    "vue3-markdown-it": "^1.0.7",
     "vuex": "^4.0.0"
   },
   "devDependencies": {

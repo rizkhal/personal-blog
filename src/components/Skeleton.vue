@@ -32,7 +32,9 @@
 export default {
   name: "Skeleton",
   props: {
-    count: null,
+    count: {
+      default: 1
+    },
   },
   setup(props) {
     return {

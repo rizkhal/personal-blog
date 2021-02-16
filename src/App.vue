@@ -3,7 +3,8 @@
     <div class="container mx-auto flex flex-wrap pb-6">
       <ThemeToggle />
       <Header />
-      <Posts />
+      <!-- router view -->
+      <router-view />
       <Footer />
     </div>
   </main>
@@ -14,7 +15,6 @@ import { onBeforeMount } from "vue";
 import ThemeToggle from "@/components/ThemeToggle";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Posts from "@/components/Posts";
 import { useStore } from "vuex";
 
 export default {
@@ -22,7 +22,6 @@ export default {
   components: {
     ThemeToggle,
     Header,
-    Posts,
     Footer,
   },
   setup(props) {

@@ -1,7 +1,7 @@
 <template>
   <div
     @click.prevent="toggle"
-    class="cursor-pointer w-8 h-8 fixed right-4 top-4 rounded-full flex items-center shadow-md justify-center bg-gray-800 dark:bg-yellow-400"
+    class="cursor-pointer z-40 w-8 h-8 fixed right-4 top-4 rounded-full flex items-center shadow-md justify-center bg-gray-800 dark:bg-yellow-400"
   >
     <svg
       v-if="state.theme == 'light'"

@@ -3,7 +3,6 @@
     <div class="container mx-auto flex flex-wrap pb-6">
       <ThemeToggle />
       <Header />
-      <!-- router view -->
       <router-view />
       <Footer />
     </div>

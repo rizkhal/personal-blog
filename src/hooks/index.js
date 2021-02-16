@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import theme from "@/hooks/modules/theme";
+import skeleton from "@/hooks/modules/skeleton";
 
 export default createStore({
   state: {},
@@ -7,5 +8,6 @@ export default createStore({
   actions: {},
   modules: {
     theme,
+    skeleton,
   },
 });

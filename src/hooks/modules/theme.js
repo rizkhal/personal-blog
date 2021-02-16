@@ -3,7 +3,7 @@ export default {
     theme: null,
   },
   mutations: {
-    set_theme(state, theme) {
+    SET_THEME(state, theme) {
       state.theme = theme;
       window.localStorage.theme = theme;
     },
@@ -18,21 +18,21 @@ export default {
         .matches;
 
       if (cachedTheme) {
-        commit("set_theme", cachedTheme);
+        commit("SET_THEME", cachedTheme);
       } else if (userPrefersDark) {
-        commit("set_theme", userPrefersDark);
+        commit("SET_THEME", userPrefersDark);
       } else {
-        commit("set_theme", "light");
+        commit("SET_THEME", "light");
       }
     },
     toggleTheme({ commit }) {
       switch (localStorage.theme) {
         case "light":
-          commit("set_theme", "dark");
+          commit("SET_THEME", "dark");
           break;
 
         default:
-          commit("set_theme", "light");
+          commit("SET_THEME", "light");
           break;
       }
     },

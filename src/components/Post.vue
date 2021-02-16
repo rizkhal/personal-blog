@@ -1,7 +1,1 @@
-<template>post</template>
-
-<script>
-export default {
-  name: "Post",
-};
-</script>
+// "https://api.github.com/repos/rizkhal/rizkhal.github.io/contents/source/_posts/spread-operator-to-rid-of-duplicate-value.md?ref=dev"

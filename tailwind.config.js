@@ -9,6 +9,16 @@ module.exports = {
   darkMode: "media", // or 'media' or 'class' or false
   theme: {
     darkSelector: ".mode-dark",
+    extend: {
+      keyframes: {
+        shimmer: {
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        shimmer: "shimmer 1s ease-in-out infinite",
+      },
+    },
   },
   variants: {
     backgroundColor: ["hover", "responsive", " focus", "dark", "dark-hover"],

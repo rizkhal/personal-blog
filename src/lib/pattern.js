@@ -27,3 +27,9 @@ export function description(str) {
 
   return pattern.exec(str)[1];
 }
+
+export function clean(str) {
+  let pattern = /%title.*|%date.*|%slug.*|%cover.*|%description.*|.?=========/g;
+
+  return str.replace(pattern, " ");
+}

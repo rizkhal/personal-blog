@@ -2,10 +2,10 @@
   <article
     v-for="(item, index) in results"
     :key="index"
-    class="flex flex-col shadow rounded-md my-4"
+    class="flex w-full flex-col shadow rounded-md my-4"
   >
     <a href="#" class="hover:opacity-75">
-      <img class="rounded-t-md w-full max-h-80" :src="item.cover" />
+      <img class="rounded-t-md object-cover h-full w-full" :src="item.cover" />
     </a>
     <div class="dark:bg-gray-800 flex flex-col rounded-b-md justify-start p-4">
       <router-link
@@ -15,8 +15,7 @@
         >{{ item.title }}</router-link
       >
       <p href="#" class="text-xs pb-3 text-gray-800 dark:text-gray-100">
-        By <a href="#" class="font-semibold hover:text-gray-800">Rizkhal 😎</a>,
-        Published on {{ item.date }}
+        By <a href="#" class="font-semibold hover:text-gray-800">Rizkhal</a> on {{ item.date }} ☕️
       </p>
       <p class="text-sm text-gray-800 dark:text-gray-100">
         {{ item.description }}

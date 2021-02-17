@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col justify-center items-center mt-4">
+  <div class="w-full flex flex-col justify-center items-center mt-16">
     <p class="text-center text-xs">
       Dibuat dengan
       <svg
@@ -16,7 +16,7 @@
           d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
         ></path>
       </svg>
-      Oleh Rizkhal
+      Oleh <a href="https://rizkhal.me" class="text-white">Rizkhal</a>
     </p>
   </div>
 </template>

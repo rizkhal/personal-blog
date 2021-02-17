@@ -12,9 +12,7 @@
 </template>
 
 <script>
-import { useStore } from "vuex";
-import { defineAsyncComponent } from "vue";
-import Pagination from "@/components/Pagination.vue";
+import { defineAsyncComponent, onErrorCaptured, ref } from "vue";
 
 const AsyncPostsComponent = defineAsyncComponent(() =>
   import("../components/PostLists.vue" /* webpackChunkName: "post-lists" */)
@@ -22,12 +20,11 @@ const AsyncPostsComponent = defineAsyncComponent(() =>
 
 export default {
   name: "Posts",
-  components: { Pagination, AsyncPostsComponent },
-  setup() {
-    const store = useStore();
-    const { count } = store.getters;
-
-    return { count };
+  components: {
+    AsyncPostsComponent,
+  },
+  setup(props) {
+    // 
   },
 };
 </script>

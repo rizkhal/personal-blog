@@ -1,5 +1,8 @@
 <template>
-  <div class="w-full mt-4">
+  <div v-if="error" class="absolute top-2/4">
+    {{ error.message }} ☹️
+  </div>
+  <div v-else class="w-full mt-4">
     <EditToggle :target="target" />
     <div class="text-center mb-16">
       <p class="text-lg font-semibold">{{ title }}</p>
@@ -15,7 +18,7 @@
 import http from "@/api/http";
 import "@/assets/css/md-dark.css";
 import { useRouter } from "vue-router";
-import { reactive, toRefs } from "vue";
+import { reactive, toRefs, ref } from "vue";
 import VueMarkdownIt from "vue3-markdown-it";
 import * as pattern from "@/lib/pattern";
 import EditToggle from "@/components/EditToggle";
@@ -28,6 +31,7 @@ export default {
   },
   async setup() {
     const router = useRouter();
+    const error = ref(null);
     const data = reactive({
       title: String,
       date: String,
@@ -49,10 +53,10 @@ export default {
       data.title = pattern.title(parsed);
       data.content = pattern.clean(parsed);
     } catch (e) {
-      console.error(e);
+      error.value = e;
     }
 
-    return { ...toRefs(data) };
+    return { error, ...toRefs(data) };
   },
 };
 </script>

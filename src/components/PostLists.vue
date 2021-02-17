@@ -1,5 +1,9 @@
 <template>
+  <div v-if="error" class="absolute top-2/4">
+    {{ error.message }} ☹️
+  </div>
   <article
+    v-else
     v-for="(item, index) in results"
     :key="index"
     class="flex w-full flex-col shadow rounded-md my-4"
@@ -15,7 +19,8 @@
         >{{ item.title }}</router-link
       >
       <p href="#" class="text-xs pb-3 text-gray-800 dark:text-gray-100">
-        By <a href="#" class="font-semibold hover:text-gray-800">Rizkhal</a> on {{ item.date }} ☕️
+        By <a href="#" class="font-semibold hover:text-gray-800">Rizkhal</a> on
+        {{ item.date }} ☕️
       </p>
       <p class="text-sm text-gray-800 dark:text-gray-100">
         {{ item.description }}
@@ -25,6 +30,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import http from "@/api/http";
 import * as pattern from "@/lib/pattern";
 
@@ -39,6 +45,7 @@ export default {
     const descriptions = [];
 
     const results = [];
+    const error = ref(null);
 
     try {
       const lists = await http(
@@ -67,10 +74,10 @@ export default {
         });
       }
     } catch (e) {
-      console.error(e);
+      error.value = e;
     }
 
-    return { results };
+    return { error, results };
   },
 };
 </script>

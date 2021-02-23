@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-col justify-center items-center mt-16">
     <p class="text-center text-xs">
-      Make with
+      Made with
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

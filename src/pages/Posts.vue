@@ -1,5 +1,5 @@
 <template>
-  <section class="min-h-screen w-full md:w-2/3 flex flex-col items-center px-3">
+  <section class="min-h-screen w-full flex flex-col items-center px-3">
     <Suspense>
       <template #default>
         <AsyncPostsComponent />
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { defineAsyncComponent, onErrorCaptured, ref } from "vue";
+import { defineAsyncComponent, onBeforeMount } from "vue";
 
 const AsyncPostsComponent = defineAsyncComponent(() =>
   import("../components/PostLists.vue" /* webpackChunkName: "post-lists" */)
@@ -23,8 +23,13 @@ export default {
   components: {
     AsyncPostsComponent,
   },
-  setup(props) {
-    // 
+  setup() {
+    onBeforeMount(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
   },
 };
 </script>

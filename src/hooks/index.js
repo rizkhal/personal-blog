@@ -1,13 +1,24 @@
 import { createStore } from "vuex";
 import theme from "@/hooks/modules/theme";
-import skeleton from "@/hooks/modules/skeleton";
 
 export default createStore({
-  state: {},
-  mutations: {},
-  actions: {},
+  state: {
+    payload: {},
+  },
+  mutations: {
+    setPayload: (state, payload) => {
+      state.payload = payload;
+    },
+  },
+  actions: {
+    setPayload({ commit }, payload) {
+      commit("setPayload", payload);
+    },
+  },
+  getters: {
+    payload: (state) => state.payload,
+  },
   modules: {
     theme,
-    skeleton,
   },
 });

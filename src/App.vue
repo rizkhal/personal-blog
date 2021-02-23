@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { onBeforeMount, onRenderTriggered } from "vue";
+import { onBeforeMount } from "vue";
 import ThemeToggle from "@/components/ThemeToggle";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -23,7 +23,7 @@ export default {
     Header,
     Footer,
   },
-  setup(props) {
+  setup() {
     const store = useStore();
 
     onBeforeMount(() => {

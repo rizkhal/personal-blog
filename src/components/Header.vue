@@ -5,7 +5,7 @@
         <img
           alt="Its me"
           src="@/assets/img/me.jpg"
-          class="w-20 h-20 rounded-full shadow-md"
+          class="w-36 h-36 rounded-full shadow-md"
         />
       </div>
       <div class="mt-4 px-4 text-center">

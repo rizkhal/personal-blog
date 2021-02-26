@@ -1,7 +1,7 @@
 <template>
   <main class="min-h-screen bg-gray-200 dark:bg-gray-900 dark:text-purple-50">
     <div class="container mx-auto flex flex-wrap pb-6">
-      <ThemeToggle />
+	  <ThemeToggle />
       <Header />
       <router-view />
       <Footer />

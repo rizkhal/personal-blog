@@ -1,10 +1,9 @@
 <template>
-  <div v-if="error" class="absolute top-2/4">
-    {{ error.message }} ☹️
-  </div>
+  <div v-if="error" class="absolute top-2/4">{{ error.message }} ☹️</div>
   <div v-else class="w-full mt-4">
     <EditToggle :target="target" />
-    <div class="text-center mb-16">
+    <BackToggle />
+    <div class="mb-16 text-center">
       <p class="text-lg font-semibold">{{ title }}</p>
       <p href="#" class="mt-2 text-xs text-gray-800 dark:text-gray-100">
         By <a href="#" class="font-semibold hover:text-gray-800">Rizkhal</a> on
@@ -22,12 +21,14 @@ import { reactive, toRefs, ref } from "vue";
 import VueMarkdownIt from "vue3-markdown-it";
 import * as pattern from "@/lib/pattern";
 import EditToggle from "@/components/EditToggle";
+import BackToggle from "@/components/BackToggle";
 
 export default {
   name: "PostDetail",
   components: {
     "vue3-markdown-it": VueMarkdownIt,
-    "EditToggle": EditToggle,
+    EditToggle: EditToggle,
+    BackToggle: BackToggle,
   },
   async setup() {
     const router = useRouter();

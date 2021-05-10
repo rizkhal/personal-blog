@@ -1,5 +1,5 @@
 <template>
-  <section class="min-h-screen w-full flex flex-col items-center px-3">
+  <section class="flex flex-col items-center w-full min-h-screen px-3">
     <Suspense>
       <template #default>
         <AsyncPost />

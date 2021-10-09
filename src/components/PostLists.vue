@@ -6,10 +6,7 @@
     :key="index"
     class="flex w-full flex-col shadow rounded-md my-4"
   >
-    <a href="#" class="hover:opacity-75">
-      <img class="rounded-t-md object-cover h-full w-full" :src="item.cover" />
-    </a>
-    <div class="dark:bg-gray-800 flex flex-col rounded-b-md justify-start p-4">
+    <div class="dark:bg-gray-800 flex flex-col rounded-md justify-start p-4">
       <router-link
         :to="item.slug"
         href="#"

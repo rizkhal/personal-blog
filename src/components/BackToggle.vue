@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="target"
+    @click="$router.go(-1)"
     class="fixed z-40 flex items-center justify-center w-8 h-8 bg-gray-800 rounded-full shadow-md cursor-pointer left-4 top-4 dark:bg-gray-300"
   >
     <svg
@@ -28,17 +28,6 @@ export default {
       type: String,
       required: false,
     },
-  },
-  setup(props) {
-    let target;
-
-    if (props.target) {
-      target = props.target;
-    } else {
-      target = process.env.VUE_APP_BASE_URL;
-    }
-
-    return { target };
   },
 };
 </script>

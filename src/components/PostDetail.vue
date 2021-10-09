@@ -1,8 +1,8 @@
 <template>
+  <BackToggle />
   <div v-if="error" class="absolute top-2/4">{{ error.message }} ☹️</div>
   <div v-else class="w-full mt-4">
     <EditToggle :target="target" />
-    <BackToggle />
     <div class="mb-16 text-center">
       <p class="text-lg font-semibold">{{ title }}</p>
       <p href="#" class="mt-2 text-xs text-gray-800 dark:text-gray-100">
